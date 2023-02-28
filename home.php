@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if ($_SESSION['status'] != "login") {
+    header("Location:http://localhost/latihan/test/login.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +19,9 @@ session_start();
 <body>
     <h1>Selamat Datang <?php echo $_SESSION["Username"] ?></h1>
     <button><a style="text-decoration: none;" href="http://localhost/latihan/test/siswa">Data Siswa</a></button>
-    <button><a style="text-decoration: none;" href="http://localhost/latihan/test/guru.php">Data Guru</a>
-    </button>
+    <button><a style="text-decoration: none;" href="http://localhost/latihan/test/guru">Data Guru</a></button>
+    <button><a style="text-decoration: none;" href="http://localhost/latihan/test/logout.php">Logout</a></button>
+
 </body>
 
 </html>

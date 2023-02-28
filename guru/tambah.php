@@ -1,18 +1,19 @@
 <?php
+
 session_start();
 
 if ($_SESSION['status'] != "login") {
     header("Location:http://localhost/latihan/test/login.php");
 }
 
-include "siswa.php";
-$siswa = new siswa;
+
+include "guru.php";
+$guru = new guru;
 if (isset($_POST['simpan'])) {
-    $siswa->add_data($_POST);
+    $guru->add_data($_POST);
     header("location:index.php");
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,18 +26,18 @@ if (isset($_POST['simpan'])) {
 </head>
 
 <body>
-    <h1>Tambah Data Siswa</h1>
+    <h1>Tambah Data Guru</h1>
     <form method="post" action="#">
         <table>
             <tr>
-                <td>Nis </td>
+                <td>Nip </td>
                 <td>:</td>
-                <td><input name="Nis" type="text"></td>
+                <td><input name="Nip" type="text"></td>
             </tr>
             <tr>
-                <td>Nama Siswa </td>
+                <td>Nama Guru </td>
                 <td>:</td>
-                <td><input name="Nama_siswa" type="text"></td>
+                <td><input name="Nama_guru" type="text"></td>
             </tr>
             <tr>
                 <td>Tempat Lahir </td>
@@ -54,34 +55,24 @@ if (isset($_POST['simpan'])) {
                 <td><input name="Jenis_kelamin" type="text"></td>
             </tr>
             <tr>
-                <td>Alamat</td>
+                <td>Alamat </td>
                 <td>:</td>
                 <td><input name="Alamat" type="text"></td>
             </tr>
             <tr>
-                <td>Telepon </td>
+                <td>Telpon </td>
                 <td>:</td>
-                <td><input name="Telepon" type="text"></td>
+                <td><input name="Telpon" type="text"></td>
             </tr>
             <tr>
-                <td>Nama Wali </td>
+                <td>Kode Mata Pelajaran </td>
                 <td>:</td>
-                <td><input name="Nama_wali" type="text"></td>
+                <td><input name="Kode_mata_pelajaran" type="text"></td>
             </tr>
             <tr>
-                <td>Kode_Kelas</td>
+                <td>Nama Mata Pelajaran</td>
                 <td>:</td>
-                <td><input name="Kode_kelas" type="text"></td>
-            </tr>
-            <tr>
-                <td>Username</td>
-                <td>:</td>
-                <td><input name="Username" type="text"></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td>:</td>
-                <td><input name="Password" type="password"></td>
+                <td><input name="Nama_mata_pelajaran" type="text"></td>
             </tr>
             <tr>
                 <td> </td>

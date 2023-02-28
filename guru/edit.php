@@ -6,8 +6,9 @@ if ($_SESSION['status'] != "login") {
     header("Location:http://localhost/latihan/test/login.php");
 }
 
-include("siswa.php");
-$data = new siswa;
+
+include("guru.php");
+$data = new guru;
 $dataEdit = $data->getByID($_GET['id']);
 $result = $dataEdit->fetch_assoc();
 ?>
@@ -15,7 +16,7 @@ $result = $dataEdit->fetch_assoc();
 <html>
 
 <body>
-    <h1>Edit Siswa</h1>
+    <h1>Edit Data Guru</h1>
     <form method="post" action="#">
         <table>
             <tr hidden>
@@ -24,14 +25,14 @@ $result = $dataEdit->fetch_assoc();
                 <td><input name="id" value="<?php echo $result['id'] ?>" disabled></td>
             </tr>
             <tr>
-                <td>Nis </td>
+                <td>Nip </td>
                 <td>:</td>
-                <td><input name="Nis" value="<?php echo $result['Nis'] ?>"></td>
+                <td><input name="Nip" value="<?php echo $result['Nip'] ?>"></td>
             </tr>
             <tr>
-                <td>Nama Siswa </td>
+                <td>Nama Guru </td>
                 <td>:</td>
-                <td><input name="Nama_siswa" type="text" value="<?php echo $result['Nama_siswa'] ?>"></td>
+                <td><input name="Nama_guru" type="text" value="<?php echo $result['Nama_guru'] ?>"></td>
             </tr>
             <tr>
                 <td>Tempat Lahir </td>
@@ -56,27 +57,17 @@ $result = $dataEdit->fetch_assoc();
             <tr>
                 <td>Telpon </td>
                 <td>:</td>
-                <td><input name="Telepon" type="text" value="<?php echo $result['Telepon'] ?>"></td>
+                <td><input name="Telpon" type="text" value="<?php echo $result['Telpon'] ?>"></td>
             </tr>
             <tr>
-                <td>Nama Wali </td>
+                <td>Kode Mata Pelajaran </td>
                 <td>:</td>
-                <td><input name="Nama_wali" type="text" value="<?php echo $result['Nama_wali'] ?>"></td>
+                <td><input name="Kode_mata_pelajaran" type="text" value="<?php echo $result['Kode_mata_pelajaran'] ?>"></td>
             </tr>
             <tr>
-                <td>Kode_Kelas</td>
+                <td>Nama Mata Pelajaran</td>
                 <td>:</td>
-                <td><input name="Kode_kelas" type="text" value="<?php echo $result['Kode_kelas'] ?>"></td>
-            </tr>
-            <tr>
-                <td>Username</td>
-                <td>:</td>
-                <td><input name="Username" type="text" value="<?php echo $result['Username'] ?>"></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td>:</td>
-                <td><input name="Password" type="text" value="<?php echo $result['Password'] ?>"></td>
+                <td><input name="Nama_mata_pelajaran" type="text" value="<?php echo $result['Nama_mata_pelajaran'] ?>"></td>
             </tr>
             <tr>
                 <td> </td>
